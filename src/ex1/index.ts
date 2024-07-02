@@ -43,6 +43,7 @@ function printLine(
     stream.on("data", (chunk) => {
       line += chunk;
       if (line.includes("\n")) {
+        stream.destroy();
         console.log(line.split("\n")[0]);
       }
     });

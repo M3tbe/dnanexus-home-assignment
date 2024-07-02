@@ -25,4 +25,29 @@ function printLine(
   inputFilePath: string,
   lineNumber: number,
   indexFilePath: string
-): void {}
+): void {
+  fs.readFile(indexFilePath, "utf8", (err, data) => {
+    if (err) throw err;
+    const lineOffsets: number[] = JSON.parse(data);
+    const offset = lineOffsets[lineNumber];
+    if (offset === undefined) {
+      console.log(`Line number ${lineNumber} is out of range.`);
+      return;
+    }
+    // Create a read stream starting at the specified offset
+    const stream = fs.createReadStream(inputFilePath, {
+      start: offset,
+      encoding: "utf8",
+    });
+    let line = "";
+    stream.on("data", (chunk) => {
+      line += chunk;
+      if (line.includes("\n")) {
+        console.log(line.split("\n")[0]);
+      }
+    });
+    stream.on("error", (err) => {
+      console.error(err);
+    });
+  });
+}

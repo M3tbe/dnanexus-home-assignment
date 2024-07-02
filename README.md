@@ -2,6 +2,12 @@
 
 Some comments about what I did...
 
+Ensure you run
+
+```bash
+npm install
+```
+
 ## Exercise 1
 
 This project contains a Node.js script written in TypeScript to efficiently retrieve an arbitrary line from a very large text file. The script optimizes repeated access by creating an index of line offsets.

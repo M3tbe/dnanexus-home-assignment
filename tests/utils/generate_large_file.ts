@@ -10,7 +10,7 @@ function generateRandomWord(length: number): string {
   return result;
 }
 
-const filePath = "input_file.txt";
+const filePath = "tests/stubs/input_file.txt";
 const lines = 1000000; // Number of lines to generate
 
 const stream = fs.createWriteStream(filePath, { flags: "w" });

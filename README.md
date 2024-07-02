@@ -20,6 +20,12 @@ To use the script, run the following command:
 npx ts-node src/index.ts <input_file_path> <line_number>
 ```
 
+Example:
+
+```bash
+npx ts-node src/ex1/index.ts tests/stubs/input_file.txt 5
+```
+
 ## Exercise 2
 
 blabla

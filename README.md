@@ -40,4 +40,19 @@ npx ts-node src/ex1/index.ts tests/stubs/input_file.txt 5
 
 ## Exercise 2
 
-blabla
+### Description
+
+This project contains a Node.js script written in TypeScript to efficiently find an index `j` in a sorted array such that all elements before `j` are less than a target value `x` and all elements from `j` onwards are greater than or equal to `x`.
+
+### Usage
+
+To use the script, you can run the following command:
+
+```bash
+npx ts-node src/ex2/index.ts
+
+```
+
+### How it works?
+
+1. **Binary Search**: The script uses a binary search algorithm to find the smallest index `j` such that `A[j] >= x`. It achieves the required runtime of `O(log n)`

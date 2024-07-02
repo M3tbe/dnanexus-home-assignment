@@ -26,6 +26,18 @@ Example:
 npx ts-node src/ex1/index.ts tests/stubs/input_file.txt 5
 ```
 
+### How It Works
+
+1. **Index Creation**: On the first run, the script creates an index file `<input_file_path>.idx` that stores the byte offsets of each line in the input file.
+2. **Line Retrieval**: On subsequent runs, the script uses the index file to quickly locate and print the specified line.
+
+### Some explanations
+
+1. **TypeScript**: Using TypeScript ensures type safety and better development experience with modern JavaScript features.
+2. **Using Fs**: The `fs` module is used to handle file operations like reading and writing files.
+3. **Using Streaming**: File reading is done using streams to handle potentially very large files efficiently without loading the entire file into memory.
+4. **Indexing**: The first run creates an index file mapping each line number to its byte offset, allowing for quick access in subsequent runs.
+
 ## Exercise 2
 
 blabla
